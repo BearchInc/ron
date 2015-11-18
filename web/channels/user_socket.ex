@@ -2,7 +2,7 @@ defmodule Ron.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Ron.RoomChannel
+  channel "stream", Ron.StreamChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

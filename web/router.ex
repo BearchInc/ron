@@ -16,7 +16,7 @@ defmodule Ron.Router do
   scope "/", Ron do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", StreamController, :index
   end
 
   # Other scopes may use custom stacks.
