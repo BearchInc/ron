@@ -80,7 +80,7 @@ function call(){
 
 function gotLocalDescription(description){
   peerConnection.setLocalDescription(description, () => {
-    channel.push("message", { body: JSON.strigify({
+    channel.push("message", { body: JSON.stringify({
       "sdp": peerConnection.localDescription
     })});
   }, handleError);
@@ -101,7 +101,7 @@ function gotRemoteStream(event){
 function gotLocalIceCandidate(event){
   if (event.candidate) {
     console.log("Local ICE candidate: \n" + event.candidate.candidate);
-    channel.push("message", {body: JSON.strigify({
+    channel.push("message", {body: JSON.stringify({
       "candidate": event.candidate
     })});
   }
